@@ -1,0 +1,34 @@
+modules = ["nodejs-20", "postgresql-16", "python-3.11"]
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[nix]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Run Dev"
+
+[[workflows.workflow]]
+name = "Run Dev"
+author = 41440185
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd BrazucaCloudPlatform && npm run dev"
+
+[deployment]
+deploymentTarget = "static"
+publicDir = "BrazucaCloudPlatform/dist"
+run = ["sh", "-c", ""]
+build = ["sh", "-c", "cd BrazucaCloudPlatform && npm run build"]
+
+[[deployment.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[[deployment.rewrites]]
+from = "/*"
+to = "/index.html"

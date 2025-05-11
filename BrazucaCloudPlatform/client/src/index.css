@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 220 77% 15%;
+  --muted: 220 30% 96%;
+  --muted-foreground: 220 40% 46.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 77% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 77% 15%;
+  --border: 220 31.8% 91.4%;
+  --input: 220 31.8% 91.4%;
+  --primary: 195 100% 46%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 40% 96.1%;
+  --secondary-foreground: 220 77% 15%;
+  --accent: 195 100% 46%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --ring: 195 100% 46%;
+  --radius: 0.5rem;
+  
+  /* Custom colors */
+  --dark-blue: 220 77% 15%;
+  --secondary-blue: 195 100% 46%;
+  --light-gray: 204 33% 97%;
+}
+
+.dark {
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+  --card: 222 47% 11%;
+  --card-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 85.7% 97.3%;
+  --ring: 217.2 32.6% 17.5%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .bg-dark-blue {
+    background-color: hsl(var(--dark-blue));
+  }
+  
+  .text-dark-blue {
+    color: hsl(var(--dark-blue));
+  }
+  
+  .bg-light-gray {
+    background-color: hsl(var(--light-gray));
+  }
+  
+  .bg-gradient-primary {
+    @apply bg-gradient-to-br from-[#0a1f44] to-[#0056b3];
+  }
+}

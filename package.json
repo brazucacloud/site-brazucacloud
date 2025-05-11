@@ -1,0 +1,17 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@hcaptcha/react-hcaptcha": "^1.12.0",
+    "@tanstack/react-table": "^8.21.3",
+    "recharts": "^2.15.3"
+  }
+}
